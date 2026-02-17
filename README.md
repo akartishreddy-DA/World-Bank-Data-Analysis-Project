@@ -30,10 +30,6 @@ Future Improvements
 
 Future enhancements can include time series forecasting models for GDP prediction, building interactive dashboards using Streamlit or Plotly, integrating live data from the World Bank API, adding geospatial visualizations, and automating the ETL workflow using orchestration tools.
 
-About
-
-This project showcases practical data engineering and analytical skills by transforming raw global economic data into structured insights. It highlights strong capabilities in data preprocessing, statistical reasoning, visualization, and real world problem solving using Python.
-
 Author
 
 Kartish Reddy Anugu
