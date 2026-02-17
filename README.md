@@ -1,136 +1,39 @@
-🌍 World Bank Economic Analytics & ETL Pipeline
-End-to-End Data Engineering & Statistical Analysis Project
-A production-style data pipeline analyzing GDP and Population trends using World Bank datasets to evaluate economic disparities and development patterns.
+World Bank Data Analysis Project
 
-📌 Project Overview
-This project builds a complete ETL and analytics workflow using World Bank economic datasets.
-The objective was to:
-Standardize inconsistent global datasets
-Clean and transform multi-source economic data
-Handle missing values using multiple strategies
-Perform statistical outlier detection
-Analyze GDP vs Population relationships
-Create modeling-ready datasets
-This project demonstrates real-world data engineering and analytical problem-solving skills.
+World Bank Data Analysis Project is an end to end data analytics project built using public datasets from the World Bank. The project focuses on analyzing global economic indicators such as GDP and population to understand development trends, economic disparities, and country level growth patterns over time. It demonstrates data cleaning, transformation, feature engineering, statistical analysis, and visualization using Python.
 
-🚀 Key Highlights
-✔ Multi-source data integration (Projects, GDP, Population, Country Metadata)
-✔ ISO-3 country code standardization
-✔ Missing value strategy comparison (Mean, Forward Fill, Backward Fill)
-✔ Wide-to-Long time-series transformation
-✔ Feature engineering with One-Hot Encoding
-✔ Outlier detection using Tukey’s IQR method
-✔ Economic visualization & insight generation
+Project Overview
 
-🛠 Tech Stack
-Languages
-Python
-Data Processing
-Pandas
-NumPy
-PyCountry
-regex
-Visualization
-Matplotlib
-Seaborn
-Machine Learning Utilities
-Scikit-learn
-Geospatial (Ready for Expansion)
-GeoPandas
-Folium
+The objective of this project is to extract, clean, and analyze real world economic datasets to generate meaningful insights. The project integrates multiple datasets including GDP, population statistics, and country level metadata. It standardizes country names using ISO codes, handles missing values using different imputation techniques, reshapes time series data for analysis, and performs exploratory data analysis to identify patterns and outliers.
 
-🔄 End-to-End Workflow
+Key Highlights
 
-1️⃣ Data Extraction
-Downloaded dataset from Kaggle
-Loaded:
-Projects dataset
-GDP dataset
-Population dataset
-Country metadata
-Performed schema validation and data inspection
+This project demonstrates multi source data integration, structured data cleaning, missing value handling, time series transformation from wide to long format, feature engineering for analytics readiness, statistical outlier detection using IQR method, and visualization of economic growth trends. The workflow reflects real world data engineering and analytics practices.
 
-2️⃣ Data Standardization & Cleaning
-🔹 Country Code Normalization
-Used pycountry to map country names to ISO-3 codes
-Created manual mapping dictionary for unmatched records
-Resolved inconsistencies across datasets
-🔹 Data Type Engineering
-Converted year columns (1960–2020) to numeric
-Cleaned and converted monetary columns
-Converted approval and closing dates to datetime
-Extracted year and weekday features
-🔹 Removed Non-Country Aggregates
-Filtered out:
-OECD members
-World aggregates
-Regional economic groupings
-Ensured clean country-level analysis.
+Workflow
 
-3️⃣ Missing Value Strategy Comparison
-Instead of blindly filling missing values, multiple approaches were tested:
-Mean Imputation
-Forward Fill (ffill)
-Backward Fill (bfill)
-Forward + Backward combination
-Ensured:
-No null GDP values
-No null Population values
-This demonstrates data reliability handling before analysis.
+The process begins with loading World Bank datasets including GDP, population, and country information. Data is cleaned by standardizing country names and converting columns into appropriate numeric and datetime formats. Missing values are treated using strategies such as mean imputation and forward fill methods. The dataset is reshaped into a time series friendly structure. Feature engineering is applied to prepare the dataset for analysis. Exploratory analysis is performed to study GDP and population trends and detect statistical outliers.
 
-4️⃣ Data Reshaping (Wide → Long Format)
-Transformed time-series data using:
-pd.melt()
-From:
-Country | 1960 | 1961 | 1962 | ...
-To:
-Country | Year | GDP
-Country | Year | Population
-Benefits:
-Enables time-series analytics
-Supports scalable merging
-Improves modeling readiness
+Technologies Used
 
-5️⃣ Feature Engineering
-📊 Sector-Based Project Analysis
-Cleaned sector labels
-Removed "(Historic)" artifacts
-Applied One-Hot Encoding
-Created modeling-ready dataset:
-Project Cost | Approval Year | Sector Indicators
+Python is used as the primary programming language. Pandas and NumPy are used for data processing and transformation. Matplotlib and Seaborn are used for visualization. Pycountry and regular expressions are used for country standardization. Scikit learn can be extended for statistical modeling.
 
-📊 Economic Analysis
+Insights Generated
 
-📈 Time-Series Visualization
-Plotted GDP & Population trends for selected countries to analyze:
-Growth trajectories
-Economic volatility
-Development progression
+The project identifies GDP growth trajectories across countries, explores the relationship between population and economic output, detects countries that are statistical outliers in economic indicators, and visualizes development trends over time.
 
-📦 Distribution Analysis (2020)
-Generated boxplots to:
-Understand GDP distribution
-Identify economic skew
-Detect extreme values
+How to Run
 
-🔎 GDP vs Population Relationship
-Built annotated scatter plots
-Filtered out mega economies (US, China, India, etc.)
-Revealed clearer mid-tier economic relationships
+Clone the repository, install the dependencies listed in the requirements file, and run the Jupyter notebook to execute the complete ETL and analysis workflow.
 
-📉 Statistical Outlier Detection
-Applied Tukey’s IQR method:
-Q1 = 25th percentile
-Q3 = 75th percentile
-IQR = Q3 - Q1
-Identified:
-GDP outliers
-Population outliers
-Countries extreme in both metrics
-Demonstrates applied statistical reasoning in economic datasets.
+Future Improvements
 
-🎯 Business & Analytical Insights
-Large economies significantly distort GDP visualization.
-High population does not guarantee high GDP performance.
-Some small-population countries are strong GDP outliers.
-Aggregate economic regions must be removed for accurate modeling.
+Future enhancements can include time series forecasting models for GDP prediction, building interactive dashboards using Streamlit or Plotly, integrating live data from the World Bank API, adding geospatial visualizations, and automating the ETL workflow using orchestration tools.
+
+About
+
+This project showcases practical data engineering and analytical skills by transforming raw global economic data into structured insights. It highlights strong capabilities in data preprocessing, statistical reasoning, visualization, and real world problem solving using Python.
+
+Author
+
+Kartish Reddy Anugu
